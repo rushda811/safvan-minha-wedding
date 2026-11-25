@@ -349,7 +349,7 @@ function Index() {
       <h2 className="font-script text-5xl text-cocoa sm:text-7xl">
         Minha Fathima
       </h2>
-<p className="mt-5 text-lg font-semibold tracking-[0.4em] text-cocoa sm:text-xl">
+<p className="mt-5 text-xl font-bold tracking-[0.35em] text-[#554438] sm:text-2xl">
   20 · 12 · 2026
 </p>
     </div>
