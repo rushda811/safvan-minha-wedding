@@ -280,7 +280,7 @@ function Index() {
     </div>
 
     {/* Names below the envelope */}
-    <div className="mt-8 text-center">
+    <div className="mt-14 text-center">
       <h1 className="font-script text-5xl text-cocoa sm:text-7xl">
         Mohammed Safvan
       </h1>
