@@ -10,8 +10,7 @@ import song from "@/assets/wedding-song.mp3.asset.json";
 import envelopeBackground from "@/assets/envelope-background.webp";
 import envelopeCover from "@/assets/envelope-cover.webp";
 import stringDecoration from "@/assets/string-decoration.webp";
-import weddingPhoto from "@/assets/wedding-photo.webp";
-
+import weddingPhoto from "@/assets/wedding-photo.png";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
