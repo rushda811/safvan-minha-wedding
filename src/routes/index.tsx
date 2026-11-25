@@ -117,18 +117,12 @@ function Countdown() {
         {/* Heading decoration */}
         <div className="mb-7 flex items-center justify-center gap-4">
           <div className="h-px w-12 bg-[#B69A76]/60 sm:w-20" />
-          <span className="font-serif text-xs tracking-[0.4em] text-[#927653]">
-            THE WEDDING DAY
-          </span>
           <div className="h-px w-12 bg-[#B69A76]/60 sm:w-20" />
         </div>
 
         <div className="mb-8 text-center">
           <p className="font-script text-4xl text-[#554438] sm:text-5xl">
             A Day to Remember
-          </p>
-          <p className="mt-2 text-[10px] tracking-[0.35em] text-[#927653] sm:text-xs">
-            SUNDAY · 20 DECEMBER · 2026
           </p>
         </div>
 
