@@ -69,6 +69,8 @@ head: () => ({
     },
   ],
 }),
+  component: Index,
+});
 
 const WEDDING = new Date("2026-12-20T11:00:00");
 const MAPS = "https://maps.app.goo.gl/Tv9TN5FMH2zfWFrE9";
