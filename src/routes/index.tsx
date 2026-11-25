@@ -89,19 +89,85 @@ function Envelope({ onOpen, closing }: { onOpen: () => void; closing: boolean })
   );
 }
 
+
 function Countdown() {
   const [now, setNow] = useState<number | null>(null);
-  useEffect(() => { setNow(Date.now()); const t = setInterval(() => setNow(Date.now()), 1000); return () => clearInterval(t); }, []);
+
+  useEffect(() => {
+    setNow(Date.now());
+    const t = setInterval(() => setNow(Date.now()), 1000);
+    return () => clearInterval(t);
+  }, []);
+
   const d = Math.max(0, WEDDING.getTime() - (now ?? WEDDING.getTime()));
-  const parts = [["Days", Math.floor(d / 864e5)], ["Hours", Math.floor(d / 36e5) % 24], ["Minutes", Math.floor(d / 6e4) % 60], ["Seconds", Math.floor(d / 1e3) % 60]] as const;
+
+  const parts = [
+    ["Days", Math.floor(d / 864e5)],
+    ["Hours", Math.floor(d / 36e5) % 24],
+    ["Minutes", Math.floor(d / 6e4) % 60],
+    ["Seconds", Math.floor(d / 1e3) % 60],
+  ] as const;
+
   return (
-    <div className="grid grid-cols-4 gap-2 sm:gap-4">
-      {parts.map(([l, v]) => (
-        <div key={l} className="rounded-2xl border border-gold/50 bg-cream/80 py-4">
-          <div className="font-serif text-3xl text-cocoa tabular-nums sm:text-5xl">{now === null ? "--" : String(v).padStart(2, "0")}</div>
-          <div className="mt-1 text-[10px] tracking-[0.25em] text-gold sm:text-xs">{l.toUpperCase()}</div>
+    <div className="relative mx-auto max-w-3xl overflow-hidden rounded-[2rem] border border-gold/70 bg-cream/90 px-5 py-10 shadow-[0_20px_50px_-20px_rgba(70,45,25,0.3)] sm:px-10 sm:py-14">
+
+      {/* Inner ornamental border */}
+      <div className="pointer-events-none absolute inset-3 rounded-[1.5rem] border border-gold/35" />
+
+      {/* Decorative corners */}
+      <span className="absolute left-5 top-5 font-serif text-2xl text-gold/70">❧</span>
+      <span className="absolute right-5 top-5 -scale-x-100 font-serif text-2xl text-gold/70">❧</span>
+      <span className="absolute bottom-5 left-5 -rotate-90 font-serif text-2xl text-gold/70">❧</span>
+      <span className="absolute bottom-5 right-5 rotate-90 font-serif text-2xl text-gold/70">❧</span>
+
+      <div className="relative z-10">
+
+        {/* Heading decoration */}
+        <div className="mb-7 flex items-center justify-center gap-4">
+          <div className="h-px w-12 bg-gold/60 sm:w-20" />
+          <span className="font-serif text-xs tracking-[0.4em] text-gold-deep">
+            THE WEDDING DAY
+          </span>
+          <div className="h-px w-12 bg-gold/60 sm:w-20" />
         </div>
-      ))}
+
+        <div className="mb-8 text-center">
+          <p className="font-script text-4xl text-cocoa sm:text-5xl">
+            A Day to Remember
+          </p>
+          <p className="mt-2 text-[10px] tracking-[0.35em] text-gold sm:text-xs">
+            SUNDAY · 20 DECEMBER · 2026
+          </p>
+        </div>
+
+        {/* Countdown numbers */}
+        <div className="grid grid-cols-4 gap-2 sm:gap-5">
+          {parts.map(([label, value]) => (
+            <div
+              key={label}
+              className="relative rounded-xl border border-gold/70 bg-cocoa px-1 py-5 text-center shadow-[0_8px_18px_-10px_rgba(50,30,15,0.7)] sm:rounded-2xl sm:py-7"
+            >
+              <div className="absolute inset-1 rounded-lg border border-gold/30 sm:rounded-xl" />
+
+              <div className="relative font-serif text-3xl text-[#E8D5B5] tabular-nums sm:text-5xl">
+                {now === null ? "--" : String(value).padStart(2, "0")}
+              </div>
+
+              <div className="relative mt-3 text-[8px] font-semibold tracking-[0.18em] text-gold sm:text-xs sm:tracking-[0.25em]">
+                {label.toUpperCase()}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom ornament */}
+        <div className="mt-8 flex items-center justify-center gap-3">
+          <div className="h-px w-12 bg-gold/50" />
+          <span className="text-xl text-gold">✦</span>
+          <div className="h-px w-12 bg-gold/50" />
+        </div>
+
+      </div>
     </div>
   );
 }
