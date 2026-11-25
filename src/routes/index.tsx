@@ -28,7 +28,7 @@ export const Route = createFileRoute("/")({
     { name: "twitter:card", content: "summary_large_image" },
     {
   property: "og:image",
-  content: "https://YOUR-DOMAIN.com/wedding-preview.jpg",
+  content: "https://safvan-minha-wedding.vercel.app/wedding-preview.png",
 },
 {
   property: "og:image:width",
@@ -40,7 +40,7 @@ export const Route = createFileRoute("/")({
 },
 {
   name: "twitter:image",
-  content: "https://YOUR-DOMAIN.com/wedding-preview.jpg",
+  content: "https://safvan-minha-wedding.vercel.app/wedding-preview.png",
 },
   ],
 }),
