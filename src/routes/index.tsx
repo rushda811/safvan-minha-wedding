@@ -13,15 +13,22 @@ import stringDecoration from "@/assets/string-decoration.webp";
 import weddingPhoto from "@/assets/wedding-photo.png";
 export const Route = createFileRoute("/")({
   head: () => ({
-    meta: [
-      { title: "Safvan & Minha — Wedding Invitation, 20 December 2026" },
-      { name: "description", content: "Join us to celebrate the wedding on Sunday, 20 December 2026 at MM palace, Kuttippala." },
-      { property: "og:title", content: "Safvan & Minha — Wedding Invitation" },
-      { property: "og:description", content: "SUNDAY, 20 December 2026 · Magnolia Plantation, Charleston SC" },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+head: () => ({
+  meta: [
+    { title: "Safvan & Minha — Wedding Invitation, Sunday 20 December 2026" },
+    {
+      name: "description",
+      content: "Join us to celebrate the wedding on Sunday, 20 December 2026 at MM Palace, Kuttippala.",
+    },
+    { property: "og:title", content: "Safvan & Minha — Wedding Invitation" },
+    {
+      property: "og:description",
+      content: "Sunday, 20 December 2026 · MM Palace, Kuttippala",
+    },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary_large_image" },
+  ],
+}),
   component: Index,
 });
 
@@ -70,7 +77,9 @@ function Envelope({ onOpen, closing }: { onOpen: () => void; closing: boolean })
           <Flowers left={flower2} right={flower2b} />
           <p className="text-xs font-semibold tracking-[0.4em] text-cocoa">TOGETHER WITH THEIR FAMILIES</p>
           <h1 className="my-6 font-script text-6xl text-cocoa">Safvan &amp; Minha </h1>
-          <p className="font-semibold tracking-[0.25em] text-cocoa">December 20, 2026</p>
+          <p className="font-semibold tracking-[0.25em] text-cocoa"><p className="font-semibold tracking-[0.2em] text-cocoa">
+  Sunday, 20 December 2026
+</p></p>
           <Divider />
           <p className="font-serif text-xl font-medium italic text-cocoa">Cordially Invites</p>
           <p className="mt-8 animate-pulse text-sm font-semibold tracking-[0.3em] text-cocoa">TAP TO OPEN</p>
@@ -97,31 +106,64 @@ function Countdown() {
   );
 }
 
+
 function Calendar() {
-  const offset = new Date(2026, 12, 1).getDay();
-  const cells = [...Array(offset).fill(null), ...Array.from({ length: 30 }, (_, i) => i + 1)];
+  // December 2026
+  const offset = new Date(2026, 11, 1).getDay();
+  const cells = [
+    ...Array(offset).fill(null),
+    ...Array.from({ length: 31 }, (_, i) => i + 1),
+  ];
+
   return (
     <div className="relative mx-auto max-w-md rounded-[2rem] border border-gold/50 bg-cream px-6 py-10 text-center shadow-lg">
-      <img src={flower2} alt="" aria-hidden className="pointer-events-none absolute -left-12 -top-14 w-28 sway sm:-left-20 sm:w-40" />
-      <img src={flower8} alt="" aria-hidden className="pointer-events-none absolute -bottom-14 -right-12 w-28 sway sm:-right-20 sm:w-40" />
+      <img
+        src={flower2}
+        alt=""
+        aria-hidden
+        className="pointer-events-none absolute -left-12 -top-14 w-28 sway sm:-left-20 sm:w-40"
+      />
+      <img
+        src={flower8}
+        alt=""
+        aria-hidden
+        className="pointer-events-none absolute -bottom-14 -right-12 w-28 sway sm:-right-20 sm:w-40"
+      />
+
       <p className="font-script text-4xl text-cocoa">December</p>
       <p className="mb-6 tracking-[0.4em] text-gold">2026</p>
-      <div className="grid grid-cols-7 gap-y-3 text-sm text-cocoa">
-        {["S", "M", "T", "W", "T", "F", "S"].map((d, i) => <div key={i} className="text-xs font-semibold text-gold">{d}</div>)}
+
+      <div className="grid grid-cols-7 gap-y-3 text-base text-cocoa">
+        {["S", "M", "T", "W", "T", "F", "S"].map((d, i) => (
+          <div key={i} className="text-sm font-semibold text-gold">
+            {d}
+          </div>
+        ))}
+
         {cells.map((c, i) => (
-          <div key={i} className="relative flex h-9 items-center justify-center">
+          <div key={i} className="relative flex h-10 items-center justify-center">
             {c === 20 ? (
               <span className="relative flex h-10 w-10 items-center justify-center">
-                <svg viewBox="0 0 24 24" className="absolute inset-0 h-full w-full fill-cocoa"><path d="M12 21s-7.5-4.6-10-9.3C.4 8.4 2.3 4 6.4 4c2.4 0 4 1.4 5.6 3.3C13.6 5.4 15.2 4 17.6 4 21.7 4 23.6 8.4 22 11.7 19.5 16.4 12 21 12 21z" /></svg>
-                <span className="relative -mt-1 font-semibold text-cream">20</span>
+                <svg
+                  viewBox="0 0 24 24"
+                  className="absolute inset-0 h-full w-full fill-cocoa"
+                >
+                  <path d="M12 21s-7.5-4.6-10-9.3C.4 8.4 2.3 4 6.4 4c2.4 0 4 1.4 5.6 3.3C13.6 5.4 15.2 4 17.6 4 21.7 4 23.6 8.4 22 11.7 19.5 16.4 12 21 12 21z" />
+                </svg>
+                <span className="relative -mt-1 font-semibold text-cream">
+                  20
+                </span>
               </span>
-            ) : c}
+            ) : (
+              c
+            )}
           </div>
         ))}
       </div>
     </div>
   );
 }
+
 
 function MusicButton({ audio, playing, toggle }: { audio: React.RefObject<HTMLAudioElement | null>; playing: boolean; toggle: () => void }) {
   return (
@@ -262,7 +304,7 @@ function Index() {
             <p>Mr. &amp; Mrs.<br />Moosakutty<br />Ummu Salma</p>
             <p>Mr. &amp; Mrs.<br />Mujeeb<br />Riyasa</p>
           </div>
-          <p className="mt-8 italic text-lg text-cocoa">“Bismillah. A beautiful beginning, a blessed union"<br />“and a lifetime of love, Insha'Allah.”</p>
+          <p className="mt-8 italic text-lg text-cocoa">Bismillah. A beautiful beginning, a blessed union<br />and a lifetime of love, Insha'Allah.</p>
           <p className="mt-6 font-script text-5xl text-cocoa">Mohammed Safvan</p>
           <p className="font-script text-3xl text-gold">&amp;</p>
           <p className="font-script text-5xl text-cocoa">Minha fathima</p>
@@ -330,10 +372,7 @@ function Index() {
     className="absolute inset-0 bg-cover bg-bottom opacity-35"
     style={{ backgroundImage: `url(${castle})` }}
   />
-
-    <div className="plaque relative mx-auto w-[min(92vw,430px)] overflow-hidden rounded-md px-6 py-8">
-      <div className="pointer-events-none absolute inset-2 rounded-sm border border-gold/45" />
-
+<div className="relative mx-auto w-[min(92vw,430px)] px-6 py-8">
       <div className="relative">
         <div className="mx-auto h-px w-48 rule-gold sm:w-72" />
 
