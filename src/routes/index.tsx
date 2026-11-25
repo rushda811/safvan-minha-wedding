@@ -23,7 +23,7 @@ export const Route = createFileRoute("/")({
 });
 
 const WEDDING = new Date("2026-12-20T11:00:00");
-const MAPS = "https://www.google.com/maps/search/?api=1&query=Magnolia+Plantation+Charleston+SC";
+const MAPS = "https://maps.app.goo.gl/Tv9TN5FMH2zfWFrE9";
 
 function Flowers({ left, right, faded }: { left: string; right: string; faded?: boolean }) {
   const o = faded ? "opacity-80" : "opacity-100";
@@ -53,7 +53,7 @@ function DateBlock({ time }: { time: string }) {
   return (
     <div className="mt-4 flex items-center justify-center gap-5 text-cocoa">
       <div className="text-right text-sm tracking-[0.2em]"><div>AT {time}</div><div>SUNDAY</div></div>
-      <div className="border-x border-gold/60 px-5 font-serif text-5xl">18</div>
+      <div className="border-x border-gold/60 px-5 font-serif text-5xl">20</div>
       <div className="text-left text-sm tracking-[0.2em]"><div>DECEMBER</div><div>2026</div></div>
     </div>
   );
@@ -107,10 +107,10 @@ function Calendar() {
         {["S", "M", "T", "W", "T", "F", "S"].map((d, i) => <div key={i} className="text-xs font-semibold text-gold">{d}</div>)}
         {cells.map((c, i) => (
           <div key={i} className="relative flex h-9 items-center justify-center">
-            {c === 18 ? (
+            {c === 20 ? (
               <span className="relative flex h-10 w-10 items-center justify-center">
                 <svg viewBox="0 0 24 24" className="absolute inset-0 h-full w-full fill-cocoa"><path d="M12 21s-7.5-4.6-10-9.3C.4 8.4 2.3 4 6.4 4c2.4 0 4 1.4 5.6 3.3C13.6 5.4 15.2 4 17.6 4 21.7 4 23.6 8.4 22 11.7 19.5 16.4 12 21 12 21z" /></svg>
-                <span className="relative -mt-1 font-semibold text-cream">18</span>
+                <span className="relative -mt-1 font-semibold text-cream">20</span>
               </span>
             ) : c}
           </div>
@@ -169,7 +169,6 @@ function Index() {
       <header className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 text-center">
         <div className="absolute inset-0 bg-cover bg-bottom opacity-30" style={{ backgroundImage: `url(${castle})` }} />
         <div className={`relative ${open ? "rise" : "opacity-0"}`}>
-          <p className="mx-auto max-w-full whitespace-nowrap font-arabic text-[clamp(1.5rem,7vw,4.5rem)] leading-[1.6] text-cocoa" dir="rtl" lang="ar">﷽</p>
           <Divider />
           <h1 className="font-script text-7xl leading-tight text-cocoa sm:text-9xl">Mohamme Safvan</h1>
           <p className="font-script text-5xl text-gold">&amp;</p>
@@ -183,16 +182,16 @@ function Index() {
           <Flowers left={flower2} right={flower8} />
           <Label>CEREMONY INFO</Label>
           <div className="grid grid-cols-2 gap-4 text-sm text-cocoa">
-            <p>Mr. &amp; Mrs.<br />Andrew Marlowe<br />Hannah Marlowe</p>
-            <p>Mr. &amp; Mrs.<br />Christopher Kensington<br />Sarah Kensington</p>
+            <p>Mr. &amp; Mrs.<br />Moosakutty<br />Ummu Salma</p>
+            <p>Mr. &amp; Mrs.<br />Mujeeb<br />Riyasa</p>
           </div>
-          <p className="mt-8 italic text-lg text-cocoa">Please join us as we celebrate<br />the beginning of our life together</p>
+          <p className="mt-8 italic text-lg text-cocoa">“Bismillah. A beautiful beginning, a blessed union"<br />“and a lifetime of love, Insha'Allah.”</p>
           <p className="mt-6 font-script text-5xl text-cocoa">Mohammed Safvan</p>
           <p className="font-script text-3xl text-gold">&amp;</p>
           <p className="font-script text-5xl text-cocoa">Minha fathima</p>
           <Divider />
           <p className="tracking-[0.3em] text-gold text-sm">WEDDING CEREMONY</p>
-          <p className="mt-2 text-xl text-cocoa">The Cathedral of St. John the Baptist</p>
+          <p className="mt-2 text-xl text-cocoa">MM Palace, Kuttippala</p>
           <DateBlock time="11:00 AM" />
           <Divider />
         </Card>
@@ -230,8 +229,8 @@ function Index() {
       <Section>
         <Card>
           <Label>WEDDING RECEPTION VENUE</Label>
-          <p className="font-script text-5xl text-cocoa">Magnolia Plantation</p>
-          <p className="mt-2 tracking-[0.2em] text-cocoa">Charleston, SC</p>
+          <p className="font-script text-5xl text-cocoa">MM Palace </p>
+          <p className="mt-2 tracking-[0.2em] text-cocoa">Kuttippala</p>
           <a href={MAPS} target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-2 rounded-full bg-cocoa px-8 py-3 text-sm tracking-[0.25em] text-cream transition hover:opacity-90">
             VIEW ON MAP
           </a>
@@ -249,11 +248,41 @@ function Index() {
         </Card>
       </Section>
 
-      <footer className="relative overflow-hidden px-6 pb-16 pt-40 text-center">
-        <div className="absolute inset-0 bg-cover bg-bottom opacity-35" style={{ backgroundImage: `url(${castle})` }} />
-        <p className="relative font-script text-5xl text-cocoa">Safvan &amp; Minha</p>
-        <p className="relative mt-2 text-xs tracking-[0.4em] text-cocoa">WE CAN'T WAIT TO CELEBRATE WITH YOU</p>
-      </footer>
+<footer className="relative overflow-hidden px-6 pb-16 pt-40 text-center">
+  <div
+    className="absolute inset-0 bg-cover bg-bottom opacity-35"
+    style={{ backgroundImage: `url(${castle})` }}
+  />
+
+  <Reveal>
+    <div className="plaque relative mx-auto w-[min(92vw,430px)] overflow-hidden rounded-md px-6 py-8">
+      <div className="pointer-events-none absolute inset-2 rounded-sm border border-gold/45" />
+
+      <div className="relative">
+        <div className="mx-auto h-px w-48 rule-gold sm:w-72" />
+
+        <div className="mt-10 flex flex-col items-center px-5 text-center">
+          <span className="font-serif text-xs font-bold uppercase tracking-[0.28em] text-gold-deep sm:text-sm">
+            Crafted by
+          </span>
+
+          <span
+            className="mt-3 font-script text-5xl leading-[1.15] text-gold sm:text-6xl"
+            style={{
+              animation: "gold-sheen 9s ease-in-out infinite",
+            }}
+          >
+            Aurelle Vows
+          </span>
+
+          <span className="mt-3 font-serif text-xs font-semibold uppercase tracking-[0.2em] text-ink/80 sm:text-sm">
+            Bespoke Wedding Invitations
+          </span>
+        </div>
+      </div>
     </div>
-  );
+  </Reveal>
+</footer>
+</div>
+);
 }
