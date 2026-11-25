@@ -108,33 +108,33 @@ function Countdown() {
   ] as const;
 
   return (
-    <div className="relative mx-auto max-w-3xl overflow-hidden rounded-[2rem] border border-gold/70 bg-cream/90 px-5 py-10 shadow-[0_20px_50px_-20px_rgba(70,45,25,0.3)] sm:px-10 sm:py-14">
+    <div className="relative mx-auto max-w-3xl overflow-hidden rounded-[2rem] border border-[#B69A76]/60 bg-[#F3E9DC] px-5 py-10 shadow-[0_20px_50px_-20px_rgba(70,45,25,0.18)] sm:px-10 sm:py-14">
 
       {/* Inner ornamental border */}
-      <div className="pointer-events-none absolute inset-3 rounded-[1.5rem] border border-gold/35" />
+      <div className="pointer-events-none absolute inset-3 rounded-[1.5rem] border border-[#B69A76]/35" />
 
       {/* Decorative corners */}
-      <span className="absolute left-5 top-5 font-serif text-2xl text-gold/70">❧</span>
-      <span className="absolute right-5 top-5 -scale-x-100 font-serif text-2xl text-gold/70">❧</span>
-      <span className="absolute bottom-5 left-5 -rotate-90 font-serif text-2xl text-gold/70">❧</span>
-      <span className="absolute bottom-5 right-5 rotate-90 font-serif text-2xl text-gold/70">❧</span>
+      <span className="absolute left-5 top-5 font-serif text-2xl text-[#A88B68]/70">❧</span>
+      <span className="absolute right-5 top-5 -scale-x-100 font-serif text-2xl text-[#A88B68]/70">❧</span>
+      <span className="absolute bottom-5 left-5 -rotate-90 font-serif text-2xl text-[#A88B68]/70">❧</span>
+      <span className="absolute bottom-5 right-5 rotate-90 font-serif text-2xl text-[#A88B68]/70">❧</span>
 
       <div className="relative z-10">
 
         {/* Heading decoration */}
         <div className="mb-7 flex items-center justify-center gap-4">
-          <div className="h-px w-12 bg-gold/60 sm:w-20" />
-          <span className="font-serif text-xs tracking-[0.4em] text-gold-deep">
+          <div className="h-px w-12 bg-[#B69A76]/60 sm:w-20" />
+          <span className="font-serif text-xs tracking-[0.4em] text-[#927653]">
             THE WEDDING DAY
           </span>
-          <div className="h-px w-12 bg-gold/60 sm:w-20" />
+          <div className="h-px w-12 bg-[#B69A76]/60 sm:w-20" />
         </div>
 
         <div className="mb-8 text-center">
-          <p className="font-script text-4xl text-cocoa sm:text-5xl">
+          <p className="font-script text-4xl text-[#554438] sm:text-5xl">
             A Day to Remember
           </p>
-          <p className="mt-2 text-[10px] tracking-[0.35em] text-gold sm:text-xs">
+          <p className="mt-2 text-[10px] tracking-[0.35em] text-[#927653] sm:text-xs">
             SUNDAY · 20 DECEMBER · 2026
           </p>
         </div>
@@ -144,15 +144,15 @@ function Countdown() {
           {parts.map(([label, value]) => (
             <div
               key={label}
-              className="relative rounded-xl border border-gold/70 bg-cocoa px-1 py-5 text-center shadow-[0_8px_18px_-10px_rgba(50,30,15,0.7)] sm:rounded-2xl sm:py-7"
+              className="relative rounded-xl border border-[#B69A76]/55 bg-[#E9DCCB] px-1 py-5 text-center shadow-[0_8px_18px_-10px_rgba(50,30,15,0.2)] sm:rounded-2xl sm:py-7"
             >
-              <div className="absolute inset-1 rounded-lg border border-gold/30 sm:rounded-xl" />
+              <div className="absolute inset-1 rounded-lg border border-[#B69A76]/30 sm:rounded-xl" />
 
-              <div className="relative font-serif text-3xl text-[#E8D5B5] tabular-nums sm:text-5xl">
+              <div className="relative font-serif text-3xl text-[#554438] tabular-nums sm:text-5xl">
                 {now === null ? "--" : String(value).padStart(2, "0")}
               </div>
 
-              <div className="relative mt-3 text-[8px] font-semibold tracking-[0.18em] text-gold sm:text-xs sm:tracking-[0.25em]">
+              <div className="relative mt-3 text-[8px] font-semibold tracking-[0.18em] text-[#927653] sm:text-xs sm:tracking-[0.25em]">
                 {label.toUpperCase()}
               </div>
             </div>
@@ -161,16 +161,15 @@ function Countdown() {
 
         {/* Bottom ornament */}
         <div className="mt-8 flex items-center justify-center gap-3">
-          <div className="h-px w-12 bg-gold/50" />
-          <span className="text-xl text-gold">✦</span>
-          <div className="h-px w-12 bg-gold/50" />
+          <div className="h-px w-12 bg-[#B69A76]/50" />
+          <span className="text-xl text-[#A88B68]">✦</span>
+          <div className="h-px w-12 bg-[#B69A76]/50" />
         </div>
 
       </div>
     </div>
   );
 }
-
 
 function Calendar() {
   // December 2026
