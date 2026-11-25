@@ -167,7 +167,7 @@ function Index() {
       <MusicButton audio={audio} playing={playing} toggle={toggle} />
 
       <header className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 text-center">
-        <div className="absolute inset-0 bg-cover bg-bottom opacity-30" style={{ backgroundImage: `url(${castle.url})` }} />
+        <div className="absolute inset-0 bg-cover bg-bottom opacity-30" style={{ backgroundImage: `url(${castle})` }} />
         <div className={`relative ${open ? "rise" : "opacity-0"}`}>
           <p className="mx-auto max-w-full whitespace-nowrap font-arabic text-[clamp(1.5rem,7vw,4.5rem)] leading-[1.6] text-cocoa" dir="rtl" lang="ar">﷽</p>
           <Divider />
@@ -250,7 +250,7 @@ function Index() {
       </Section>
 
       <footer className="relative overflow-hidden px-6 pb-16 pt-40 text-center">
-        <div className="absolute inset-0 bg-cover bg-bottom opacity-35" style={{ backgroundImage: `url(${castle.url})` }} />
+        <div className="absolute inset-0 bg-cover bg-bottom opacity-35" style={{ backgroundImage: `url(${castle})` }} />
         <p className="relative font-script text-5xl text-cocoa">Safvan &amp; Minha</p>
         <p className="relative mt-2 text-xs tracking-[0.4em] text-cocoa">WE CAN'T WAIT TO CELEBRATE WITH YOU</p>
       </footer>
