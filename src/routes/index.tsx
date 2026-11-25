@@ -337,7 +337,7 @@ function Index() {
     </div>
 
     {/* Names below the envelope */}
-    <div className="mt-14 text-center">
+    <div className="mt-16 text-center">
       <h1 className="font-script text-5xl text-cocoa sm:text-7xl">
         Mohammed Safvan
       </h1>
@@ -345,9 +345,9 @@ function Index() {
       <h2 className="font-script text-5xl text-cocoa sm:text-7xl">
         Minha Fathima
       </h2>
-      <p className="mt-5 tracking-[0.4em] text-cocoa">
-        20 · 12 · 2026
-      </p>
+<p className="mt-5 text-lg tracking-[0.4em] text-cocoa sm:text-xl">
+  20 · 12 · 2026
+</p>
     </div>
   </div>
 </header>
