@@ -471,19 +471,26 @@ function Index() {
       Kuttippala
     </p>
 
+    {/* Google Map */}
+    <div className="mt-8 overflow-hidden rounded-2xl border-2 border-[#B69A76] shadow-lg">
+      <iframe
+        src="https://maps.google.com/maps?q=MM%20Palace%2C%20Kuttippala&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        width="100%"
+        height="300"
+        style={{ border: 0 }}
+        loading="lazy"
+        allowFullScreen
+        referrerPolicy="no-referrer-when-downgrade"
+        title="MM Palace Kuttippala Google Map"
+      />
+    </div>
+
     <a
       href={MAPS}
       target="_blank"
       rel="noopener noreferrer"
-      className="mt-8 inline-flex items-center gap-3 rounded-full border border-[#B69A76] bg-[#554438] px-9 py-4 text-sm font-bold tracking-[0.2em] text-[#F3E9DC] shadow-lg transition hover:scale-105 hover:opacity-90"
+      className="mt-6 inline-flex items-center gap-3 rounded-full border border-[#B69A76] bg-[#554438] px-9 py-4 text-sm font-bold tracking-[0.2em] text-[#F3E9DC] shadow-lg transition hover:scale-105"
     >
-      <svg
-        viewBox="0 0 24 24"
-        className="h-5 w-5 fill-current"
-        aria-hidden="true"
-      >
-        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" />
-      </svg>
       OPEN IN GOOGLE MAPS
     </a>
   </Card>
