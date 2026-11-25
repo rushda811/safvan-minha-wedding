@@ -331,7 +331,6 @@ function Index() {
     style={{ backgroundImage: `url(${castle})` }}
   />
 
-  <Reveal>
     <div className="plaque relative mx-auto w-[min(92vw,430px)] overflow-hidden rounded-md px-6 py-8">
       <div className="pointer-events-none absolute inset-2 rounded-sm border border-gold/45" />
 
@@ -358,7 +357,7 @@ function Index() {
         </div>
       </div>
     </div>
-  </Reveal>
+
 </footer>
 </div>
 );
