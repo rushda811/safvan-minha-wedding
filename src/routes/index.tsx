@@ -17,12 +17,12 @@ export const Route = createFileRoute("/")({
     { title: "Safvan & Minha — Wedding Invitation, Sunday 20 December 2026" },
     {
       name: "description",
-      content: "Join us to celebrate the wedding on Sunday, 20 December 2026 at MM Palace, Kuttippala.",
+      content: "Join us to celebrate the wedding on Sunday, 20 December 2026 at M M Palace, Kuttippala.",
     },
     { property: "og:title", content: "Safvan & Minha — Wedding Invitation" },
     {
       property: "og:description",
-      content: "Sunday, 20 December 2026 · MM Palace, Kuttippala",
+      content: "Sunday, 20 December 2026 · M M Palace, Kuttippala",
     },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
@@ -356,7 +356,7 @@ function Index() {
       <Section>
         <Card>
           <Flowers left={flower2} right={flower8} />
-          <Label>CEREMONY INFO</Label>
+          <h2 className="mt-2 font-script text-6xl text-cocoa sm:text-7xl">Ceremony Info</h2>
           <div className="grid grid-cols-2 gap-4 text-sm text-cocoa">
             <p>Mr. &amp; Mrs.<br />Moosakutty<br />Ummu Salma</p>
             <p>Mr. &amp; Mrs.<br />Mujeeb<br />Riyasa</p>
@@ -367,7 +367,7 @@ function Index() {
           <p className="font-script text-5xl text-cocoa">Minha fathima</p>
           <Divider />
           <p className="tracking-[0.3em] text-gold text-sm">WEDDING CEREMONY</p>
-          <p className="mt-2 text-xl text-cocoa">MM Palace, Kuttippala</p>
+          <p className="mt-2 text-xl text-cocoa">M M Palace, Kuttippala</p>
           <DateBlock time="11:00 AM" />
           <Divider />
         </Card>
@@ -375,15 +375,12 @@ function Index() {
 
       <Section>
         <div className="mx-auto max-w-2xl text-center">
-          <p className="font-script text-6xl text-cocoa">Countdown</p>
-          <p className="mb-8 mt-2 text-xs tracking-[0.4em] text-gold">UNTIL WE SAY "I DO"</p>
           <Countdown />
         </div>
       </Section>
 
       <Section>
         <div className="mb-10 text-center">
-          <p className="text-xs font-semibold tracking-[0.4em] text-gold">20 · 12 · 2026</p>
           <h2 className="mt-2 font-script text-6xl text-cocoa sm:text-7xl">Save the Date</h2>
         </div>
         <Calendar />
@@ -392,7 +389,7 @@ function Index() {
       <Section>
         <Card>
           <Label>WEDDING RECEPTION VENUE</Label>
-          <p className="font-script text-5xl text-cocoa">MM Palace </p>
+          <p className="font-script text-5xl text-cocoa">M M Palace </p>
           <p className="mt-2 tracking-[0.2em] text-cocoa">Kuttippala</p>
           <a href={MAPS} target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-2 rounded-full bg-cocoa px-8 py-3 text-sm tracking-[0.25em] text-cream transition hover:opacity-90">
             VIEW ON MAP
