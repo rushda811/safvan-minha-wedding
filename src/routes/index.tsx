@@ -26,6 +26,22 @@ export const Route = createFileRoute("/")({
     },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
+    {
+  property: "og:image",
+  content: "https://YOUR-DOMAIN.com/wedding-preview.jpg",
+},
+{
+  property: "og:image:width",
+  content: "1200",
+},
+{
+  property: "og:image:height",
+  content: "630",
+},
+{
+  name: "twitter:image",
+  content: "https://YOUR-DOMAIN.com/wedding-preview.jpg",
+},
   ],
 }),
   component: Index,
