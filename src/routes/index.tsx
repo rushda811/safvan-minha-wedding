@@ -1,11 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type React from "react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import paper from "@/assets/paper.webp.asset.json";
-import castle from "@/assets/castle-background.webp.asset.json";
-import flower2 from "@/assets/flower2-decoration.webp.asset.json";
-import flower2b from "@/assets/flower2-decoration-2.webp.asset.json";
-import flower8 from "@/assets/flower8-decoration.webp.asset.json";
+import paper from "@/assets/paper.webp";
+import castle from "@/assets/castle-background.webp";
+import flower2 from "@/assets/flower2-decoration.webp";
+import flower2b from "@/assets/flower-decoration.webp";
+import flower8 from "@/assets/flower8-decoration.webp";
 import song from "@/assets/wedding-song.mp3.asset.json";
 
 export const Route = createFileRoute("/")({
@@ -64,9 +64,9 @@ function Envelope({ onOpen, closing }: { onOpen: () => void; closing: boolean })
     <div className={`fixed inset-0 z-50 flex items-center justify-center bg-envelope px-6 ${closing ? "env-out" : ""}`}>
       <button onClick={onOpen} className="group relative w-full max-w-sm rise">
         <Card className="!bg-cream py-16 transition-transform duration-500 group-hover:-translate-y-1">
-          <Flowers left={flower2.url} right={flower2b.url} />
+          <Flowers left={flower2} right={flower2b} />
           <p className="text-xs font-semibold tracking-[0.4em] text-cocoa">TOGETHER WITH THEIR FAMILIES</p>
-          <h1 className="my-6 font-script text-6xl text-cocoa">Mohammed Safvan &amp; Minha Fathima</h1>
+          <h1 className="my-6 font-script text-6xl text-cocoa">Safvan &amp; Minha </h1>
           <p className="font-semibold tracking-[0.25em] text-cocoa">December 20, 2026</p>
           <Divider />
           <p className="font-serif text-xl font-medium italic text-cocoa">Cordially Invites</p>
@@ -99,8 +99,8 @@ function Calendar() {
   const cells = [...Array(offset).fill(null), ...Array.from({ length: 30 }, (_, i) => i + 1)];
   return (
     <div className="relative mx-auto max-w-md rounded-[2rem] border border-gold/50 bg-cream px-6 py-10 text-center shadow-lg">
-      <img src={flower2.url} alt="" aria-hidden className="pointer-events-none absolute -left-12 -top-14 w-28 sway sm:-left-20 sm:w-40" />
-      <img src={flower8.url} alt="" aria-hidden className="pointer-events-none absolute -bottom-14 -right-12 w-28 sway sm:-right-20 sm:w-40" />
+      <img src={flower2} alt="" aria-hidden className="pointer-events-none absolute -left-12 -top-14 w-28 sway sm:-left-20 sm:w-40" />
+      <img src={flower8} alt="" aria-hidden className="pointer-events-none absolute -bottom-14 -right-12 w-28 sway sm:-right-20 sm:w-40" />
       <p className="font-script text-4xl text-cocoa">December</p>
       <p className="mb-6 tracking-[0.4em] text-gold">2026</p>
       <div className="grid grid-cols-7 gap-y-3 text-sm text-cocoa">
@@ -180,7 +180,7 @@ function Index() {
 
       <Section>
         <Card>
-          <Flowers left={flower2.url} right={flower8.url} />
+          <Flowers left={flower2} right={flower8} />
           <Label>CEREMONY INFO</Label>
           <div className="grid grid-cols-2 gap-4 text-sm text-cocoa">
             <p>Mr. &amp; Mrs.<br />Andrew Marlowe<br />Hannah Marlowe</p>
@@ -240,7 +240,7 @@ function Index() {
 
       <Section>
         <Card className="py-20 sm:py-28">
-          <Flowers left={flower2b.url} right={flower8.url} faded />
+          <Flowers left={flower2b} right={flower8} faded />
           <p className="font-arabic text-2xl leading-loose text-cocoa sm:text-3xl" dir="rtl">
             بَارَكَ اللهُ لَكُماَ وَبَارَكَ عَلَيْكُماَ وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ
           </p>
