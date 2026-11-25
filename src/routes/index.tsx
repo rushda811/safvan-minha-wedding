@@ -12,40 +12,63 @@ import envelopeCover from "@/assets/envelope-cover.webp";
 import stringDecoration from "@/assets/string-decoration.webp";
 import weddingPhoto from "@/assets/wedding-photo.png";
 export const Route = createFileRoute("/")({
-  head: () => ({
+head: () => ({
   meta: [
-    { title: "Safvan & Minha — Wedding Invitation,  20 December 2026" },
+    {
+      title: "Safvan & Minha | Together Forever",
+    },
     {
       name: "description",
-      content: "Join us to celebrate the wedding on  20 December 2026 at M M Palace, Kuttippala.",
+      content:
+        "With the blessings of Allah and our families, we joyfully invite you to celebrate the beginning of our forever. Open our wedding invitation and share in our happiness.",
     },
-    { property: "og:title", content: "Safvan & Minha — Wedding Invitation" },
+    {
+      property: "og:title",
+      content: "Mohammed Safvan & Minha Fathima",
+    },
     {
       property: "og:description",
-      content: " 20 December 2026 · M M Palace, Kuttippala",
+      content:
+        "Two hearts, one beautiful journey. You're warmly invited to celebrate our special day. Bismillah.",
     },
-    { property: "og:type", content: "website" },
-    { name: "twitter:card", content: "summary_large_image" },
     {
-  property: "og:image",
-  content: "https://safvan-minha-wedding.vercel.app/wedding-preview.png",
-},
-{
-  property: "og:image:width",
-  content: "1200",
-},
-{
-  property: "og:image:height",
-  content: "630",
-},
-{
-  name: "twitter:image",
-  content: "https://safvan-minha-wedding.vercel.app/wedding-preview.png",
-},
+      property: "og:type",
+      content: "website",
+    },
+    {
+      property: "og:url",
+      content: "https://safvan-minha-wedding.vercel.app/",
+    },
+    {
+      property: "og:image",
+      content: "https://safvan-minha-wedding.vercel.app/wedding-preview.png",
+    },
+    {
+      property: "og:image:width",
+      content: "1200",
+    },
+    {
+      property: "og:image:height",
+      content: "630",
+    },
+    {
+      name: "twitter:card",
+      content: "summary_large_image",
+    },
+    {
+      name: "twitter:title",
+      content: "Mohammed Safvan & Minha Fathima",
+    },
+    {
+      name: "twitter:description",
+      content: "Two hearts, one beautiful journey. Bismillah.",
+    },
+    {
+      name: "twitter:image",
+      content: "https://safvan-minha-wedding.vercel.app/wedding-preview.png",
+    },
   ],
 }),
-  component: Index,
-});
 
 const WEDDING = new Date("2026-12-20T11:00:00");
 const MAPS = "https://maps.app.goo.gl/Tv9TN5FMH2zfWFrE9";
@@ -436,17 +459,35 @@ function Index() {
         </div>
         <Calendar />
       </Section>
+<Section>
+  <Card>
+    <Label>WEDDING RECEPTION VENUE</Label>
 
-      <Section>
-        <Card>
-          <Label>WEDDING RECEPTION VENUE</Label>
-          <p className="font-script text-5xl text-cocoa">M M Palace </p>
-          <p className="mt-2 tracking-[0.2em] text-cocoa">Kuttippala</p>
-          <a href={MAPS} target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-2 rounded-full bg-cocoa px-8 py-3 text-sm tracking-[0.25em] text-cream transition hover:opacity-90">
-            VIEW ON MAP
-          </a>
-        </Card>
-      </Section>
+    <p className="font-script text-5xl text-cocoa sm:text-6xl">
+      M M Palace
+    </p>
+
+    <p className="mt-2 text-lg font-semibold tracking-[0.2em] text-[#554438]">
+      Kuttippala
+    </p>
+
+    <a
+      href={MAPS}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="mt-8 inline-flex items-center gap-3 rounded-full border border-[#B69A76] bg-[#554438] px-9 py-4 text-sm font-bold tracking-[0.2em] text-[#F3E9DC] shadow-lg transition hover:scale-105 hover:opacity-90"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        className="h-5 w-5 fill-current"
+        aria-hidden="true"
+      >
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" />
+      </svg>
+      OPEN IN GOOGLE MAPS
+    </a>
+  </Card>
+</Section>
 
       <Section>
         <Card className="py-20 sm:py-28">
