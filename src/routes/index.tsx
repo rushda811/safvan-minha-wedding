@@ -353,25 +353,72 @@ function Index() {
 </header>
 
 
-      <Section>
-        <Card>
-          <Flowers left={flower2} right={flower8} />
-          <h2 className="mt-2 font-script text-6xl text-cocoa sm:text-7xl">Ceremony Info</h2>
-          <div className="grid grid-cols-2 gap-4 text-sm text-cocoa">
-            <p>Mr. &amp; Mrs.<br />Moosakutty<br />Ummu Salma</p>
-            <p>Mr. &amp; Mrs.<br />Mujeeb<br />Riyasa</p>
-          </div>
-          <p className="mt-8 italic text-lg text-cocoa">Bismillah. A beautiful beginning, a blessed union<br />and a lifetime of love, Insha'Allah.</p>
-          <p className="mt-6 font-script text-5xl text-cocoa">Mohammed Safvan</p>
-          <p className="font-script text-3xl text-gold">&amp;</p>
-          <p className="font-script text-5xl text-cocoa">Minha fathima</p>
-          <Divider />
-          <p className="tracking-[0.3em] text-gold text-sm">WEDDING CEREMONY</p>
-          <p className="mt-2 text-xl text-cocoa">M M Palace, Kuttippala</p>
-          <DateBlock time="11:00 AM" />
-          <Divider />
-        </Card>
-      </Section>
+<Section>
+  <Card>
+    <Flowers left={flower2} right={flower8} />
+
+    <h2 className="mt-2 mb-8 font-script text-6xl text-cocoa sm:text-7xl">
+      Ceremony Info
+    </h2>
+
+    {/* Parents */}
+    <div className="grid grid-cols-2 gap-4 text-base font-semibold leading-relaxed text-[#554438] sm:text-lg">
+      <p>
+        Mr. &amp; Mrs.<br />
+        Moosakutty<br />
+        Ummu Salma
+      </p>
+      <p>
+        Mr. &amp; Mrs.<br />
+        Mujeeb<br />
+        Riyasa
+      </p>
+    </div>
+
+    {/* Wedding message */}
+    <p className="mt-10 text-lg font-medium italic leading-relaxed text-[#554438] sm:text-xl">
+      Bismillah. A beautiful beginning, a blessed union
+      <br />
+      and a lifetime of love, Insha'Allah.
+    </p>
+
+    {/* Couple names */}
+    <div className="mt-8">
+      <p className="font-script text-6xl text-cocoa sm:text-7xl">
+        Mohammed Safvan
+      </p>
+      <p className="my-1 font-script text-4xl text-[#A88B68]">
+        &amp;
+      </p>
+      <p className="font-script text-6xl text-cocoa sm:text-7xl">
+        Minha Fathima
+      </p>
+    </div>
+
+    <Divider />
+
+    {/* Venue and ceremony */}
+    <div className="mt-6 text-center">
+      <p className="font-serif text-sm font-semibold tracking-[0.4em] text-[#927653] sm:text-base">
+        WEDDING CEREMONY
+      </p>
+
+      <div className="mx-auto my-4 h-px w-20 bg-[#B69A76]" />
+
+      <p className="font-serif text-3xl font-semibold tracking-wide text-[#554438] sm:text-4xl">
+        M M Palace
+      </p>
+
+      <p className="mt-2 text-lg font-medium tracking-[0.18em] text-[#927653] sm:text-xl">
+        KUTTIPPALA
+      </p>
+
+      <DateBlock time="11:00 AM" />
+    </div>
+
+    <Divider />
+  </Card>
+</Section>
 
       <Section>
         <div className="mx-auto max-w-2xl text-center">
