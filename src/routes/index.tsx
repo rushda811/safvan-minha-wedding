@@ -10,6 +10,7 @@ import song from "@/assets/wedding-song.mp3.asset.json";
 import envelopeBackground from "@/assets/envelope-background.webp";
 import envelopeCover from "@/assets/envelope-cover.webp";
 import stringDecoration from "@/assets/string-decoration.webp";
+import weddingPhoto from "@/assets/wedding-photo.webp";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -198,14 +199,13 @@ function Index() {
           ["--dbr-float" as string]: "-7px",
         }}
       >
-        <div className="aspect-[232/206] rotate-[3.92deg] border-[5px] border-white bg-white shadow-[2px_2px_4px_rgba(0,0,0,0.25)]">
-          <img
-            src="https://assets.chungdoi.com/photo-library/design/5911bab0e7c45f89e9b2e84bde79d74fa6d448ba1a6401128861f9be87c92689.webp"
-            alt="Wedding photograph"
-            className="h-full w-full object-cover"
-          />
-        </div>
-      </div>
+<div className="aspect-[232/206] rotate-[3.92deg] border-[5px] border-white bg-white shadow-[2px_2px_4px_rgba(0,0,0,0.25)]">
+  <img
+    src={weddingPhoto}
+    alt="Wedding photograph"
+    className="h-full w-full object-cover"
+  />
+</div>
 
       {/* Front envelope */}
       <img
