@@ -205,6 +205,7 @@ function Index() {
     className="h-full w-full object-cover"
   />
 </div>
+</div>
 
       {/* Front envelope */}
       <img
