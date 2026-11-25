@@ -112,13 +112,6 @@ function Countdown() {
 
       {/* Inner ornamental border */}
       <div className="pointer-events-none absolute inset-3 rounded-[1.5rem] border border-[#B69A76]/35" />
-
-      {/* Decorative corners */}
-      <span className="absolute left-5 top-5 font-serif text-2xl text-[#A88B68]/70">❧</span>
-      <span className="absolute right-5 top-5 -scale-x-100 font-serif text-2xl text-[#A88B68]/70">❧</span>
-      <span className="absolute bottom-5 left-5 -rotate-90 font-serif text-2xl text-[#A88B68]/70">❧</span>
-      <span className="absolute bottom-5 right-5 rotate-90 font-serif text-2xl text-[#A88B68]/70">❧</span>
-
       <div className="relative z-10">
 
         {/* Heading decoration */}
@@ -377,19 +370,6 @@ function Index() {
           <p className="mt-2 text-xl text-cocoa">MM Palace, Kuttippala</p>
           <DateBlock time="11:00 AM" />
           <Divider />
-        </Card>
-      </Section>
-
-      <Section>
-        <Card>
-          <Label>RECEPTION INFO</Label>
-          <p className="italic text-lg text-cocoa">The reception will take place at:</p>
-          <DateBlock time="11:00 AM" />
-          <Divider />
-          <div className="flex justify-center gap-10 text-cocoa">
-            <div><p className="text-xs tracking-[0.3em] text-gold">WELCOME</p><p className="text-3xl">16:30</p></div>
-            <div><p className="text-xs tracking-[0.3em] text-gold">RECEPTION</p><p className="text-3xl">19:00</p></div>
-          </div>
         </Card>
       </Section>
 
