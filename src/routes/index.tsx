@@ -7,6 +7,9 @@ import flower2 from "@/assets/flower2-decoration.webp";
 import flower2b from "@/assets/flower-decoration.webp";
 import flower8 from "@/assets/flower8-decoration.webp";
 import song from "@/assets/wedding-song.mp3.asset.json";
+import envelopeBackground from "@/assets/envelope-background.webp";
+import envelopeCover from "@/assets/envelope-cover.webp";
+import stringDecoration from "@/assets/string-decoration.webp";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -95,7 +98,7 @@ function Countdown() {
 }
 
 function Calendar() {
-  const offset = new Date(2026, 8, 1).getDay();
+  const offset = new Date(2026, 12, 1).getDay();
   const cells = [...Array(offset).fill(null), ...Array.from({ length: 30 }, (_, i) => i + 1)];
   return (
     <div className="relative mx-auto max-w-md rounded-[2rem] border border-gold/50 bg-cream px-6 py-10 text-center shadow-lg">
@@ -151,6 +154,7 @@ function Section({ children }: { children: ReactNode }) {
   return <section ref={ref} className={`reveal relative px-8 py-14 sm:py-20 ${inView ? "in" : ""}`}>{children}</section>;
 }
 
+
 function Index() {
   const [open, setOpen] = useState(false);
   const [gone, setGone] = useState(false);
@@ -166,16 +170,89 @@ function Index() {
       {!gone && <Envelope onOpen={openInvite} closing={open} />}
       <MusicButton audio={audio} playing={playing} toggle={toggle} />
 
-      <header className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 text-center">
-        <div className="absolute inset-0 bg-cover bg-bottom opacity-30" style={{ backgroundImage: `url(${castle})` }} />
-        <div className={`relative ${open ? "rise" : "opacity-0"}`}>
-          <Divider />
-          <h1 className="font-script text-7xl leading-tight text-cocoa sm:text-9xl">Mohamme Safvan</h1>
-          <p className="font-script text-5xl text-gold">&amp;</p>
-          <h1 className="font-script text-7xl leading-tight text-cocoa sm:text-9xl">Minha Fathima</h1>
-          <p className="mt-6 tracking-[0.4em] text-cocoa">20 · 12 · 2026</p>
+
+<header className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 py-12">
+
+  {/* Background */}
+  <div
+    className="absolute inset-0 bg-cover bg-bottom opacity-30"
+    style={{ backgroundImage: `url(${castle})` }}
+  />
+
+  {/* Envelope composition */}
+  <div className="relative z-10 mx-auto w-full max-w-[380px]">
+    <div className="relative aspect-[292/341] w-full">
+
+      {/* Background envelope */}
+      <img
+        src={envelopeBackground}
+        alt=""
+        className="absolute inset-0 z-10 w-full"
+      />
+
+      {/* Your photograph */}
+      <div
+        className="absolute left-[12%] top-[18%] z-20 w-[79.5%]"
+        style={{
+          animation: "dbrFloat 7.3s ease-in-out infinite",
+          ["--dbr-float" as string]: "-7px",
+        }}
+      >
+        <div className="aspect-[232/206] rotate-[3.92deg] border-[5px] border-white bg-white shadow-[2px_2px_4px_rgba(0,0,0,0.25)]">
+          <img
+            src="https://assets.chungdoi.com/photo-library/design/5911bab0e7c45f89e9b2e84bde79d74fa6d448ba1a6401128861f9be87c92689.webp"
+            alt="Wedding photograph"
+            className="h-full w-full object-cover"
+          />
         </div>
-      </header>
+      </div>
+
+      {/* Front envelope */}
+      <img
+        src={envelopeCover}
+        alt=""
+        className="absolute left-0 top-[43.1%] z-30 w-full"
+      />
+
+      {/* Right flower */}
+      <img
+        src={flower2b}
+        alt=""
+        className="absolute left-[65.8%] top-[69.5%] z-[35] w-[54.5%] object-contain"
+      />
+
+      {/* Left flower */}
+      <img
+        src={flower8}
+        alt=""
+        className="absolute -left-[12%] top-[33.1%] z-[36] w-[39.4%] object-contain"
+      />
+
+      {/* String decoration */}
+      <img
+        src={stringDecoration}
+        alt=""
+        className="absolute left-[14.4%] top-[12.3%] z-[37] w-[22.3%] object-contain"
+      />
+
+    </div>
+
+    {/* Names below the envelope */}
+    <div className="mt-8 text-center">
+      <h1 className="font-script text-5xl text-cocoa sm:text-7xl">
+        Mohammed Safvan
+      </h1>
+      <p className="my-2 font-script text-4xl text-gold">&amp;</p>
+      <h2 className="font-script text-5xl text-cocoa sm:text-7xl">
+        Minha Fathima
+      </h2>
+      <p className="mt-5 tracking-[0.4em] text-cocoa">
+        20 · 12 · 2026
+      </p>
+    </div>
+  </div>
+</header>
+
 
       <Section>
         <Card>
