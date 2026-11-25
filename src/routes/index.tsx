@@ -14,15 +14,15 @@ import weddingPhoto from "@/assets/wedding-photo.png";
 export const Route = createFileRoute("/")({
   head: () => ({
   meta: [
-    { title: "Safvan & Minha — Wedding Invitation, Sunday 20 December 2026" },
+    { title: "Safvan & Minha — Wedding Invitation,  20 December 2026" },
     {
       name: "description",
-      content: "Join us to celebrate the wedding on Sunday, 20 December 2026 at M M Palace, Kuttippala.",
+      content: "Join us to celebrate the wedding on  20 December 2026 at M M Palace, Kuttippala.",
     },
     { property: "og:title", content: "Safvan & Minha — Wedding Invitation" },
     {
       property: "og:description",
-      content: "Sunday, 20 December 2026 · M M Palace, Kuttippala",
+      content: " 20 December 2026 · M M Palace, Kuttippala",
     },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
@@ -77,7 +77,7 @@ function Envelope({ onOpen, closing }: { onOpen: () => void; closing: boolean })
           <p className="text-xs font-semibold tracking-[0.4em] text-cocoa">TOGETHER WITH THEIR FAMILIES</p>
           <h1 className="my-6 font-script text-6xl text-cocoa">Safvan &amp; Minha </h1>
           <p className="font-semibold tracking-[0.25em] text-cocoa"><p className="font-semibold tracking-[0.2em] text-cocoa">
-  Sunday, 20 December 2026
+   20 December 2026
 </p></p>
           <Divider />
           <p className="font-serif text-xl font-medium italic text-cocoa">Cordially Invites</p>
@@ -113,12 +113,6 @@ function Countdown() {
       {/* Inner ornamental border */}
       <div className="pointer-events-none absolute inset-3 rounded-[1.5rem] border border-[#B69A76]/35" />
       <div className="relative z-10">
-
-        {/* Heading decoration */}
-        <div className="mb-7 flex items-center justify-center gap-4">
-          <div className="h-px w-12 bg-[#B69A76]/60 sm:w-20" />
-          <div className="h-px w-12 bg-[#B69A76]/60 sm:w-20" />
-        </div>
 
         <div className="mb-8 text-center">
           <p className="font-script text-4xl text-[#554438] sm:text-5xl">
