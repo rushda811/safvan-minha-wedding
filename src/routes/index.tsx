@@ -292,12 +292,13 @@ function Index() {
     const a = audio.current; if (!a) return;
     if (a.paused) { void a.play().then(() => setPlaying(true)).catch(() => {}); } else { a.pause(); setPlaying(false); }
   };
-  const openInvite = () => { setOpen(true); const a = audio.current; if (a) void a.play().then(() => setPlaying(true)).catch(() => {}); setTimeout(() => setGone(true), 1000); };
-  return (
+const openInvite = () => {
+  setOpen(true);
+  setTimeout(() => setGone(true), 1000);
+};  return (
     <div className="paper-tint min-h-screen overflow-x-hidden bg-cover bg-fixed bg-center" style={{ backgroundImage: `url(${paper.url})` }}>
       {!gone && <Envelope onOpen={openInvite} closing={open} />}
-      <MusicButton audio={audio} playing={playing} toggle={toggle} />
-
+{/* <MusicButton audio={audio} playing={playing} toggle={toggle} /> */}
 
 <header className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 py-12">
 
