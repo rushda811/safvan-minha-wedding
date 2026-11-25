@@ -13,7 +13,6 @@ import stringDecoration from "@/assets/string-decoration.webp";
 import weddingPhoto from "@/assets/wedding-photo.png";
 export const Route = createFileRoute("/")({
   head: () => ({
-head: () => ({
   meta: [
     { title: "Safvan & Minha — Wedding Invitation, Sunday 20 December 2026" },
     {
