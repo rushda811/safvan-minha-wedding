@@ -292,10 +292,10 @@ function Index() {
     const a = audio.current; if (!a) return;
     if (a.paused) { void a.play().then(() => setPlaying(true)).catch(() => {}); } else { a.pause(); setPlaying(false); }
   };
-const openInvite = () => {
+  const openInvite = () => {
   setOpen(true);
 
-  // Start wedding music
+  // Start music when the envelope is clicked
   const a = audio.current;
   if (a) {
     void a.play()
@@ -303,16 +303,9 @@ const openInvite = () => {
       .catch(() => {});
   }
 
-  // Close envelope and scroll to Ceremony Info
+  // Close the envelope after the animation
   setTimeout(() => {
     setGone(true);
-
-    setTimeout(() => {
-      ceremonyRef.current?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }, 100);
   }, 1000);
 };
 return (
