@@ -1,12 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type React from "react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import paper from "@/assets/paper.webp";
 import castle from "@/assets/castle-background.webp";
 import flower2 from "@/assets/flower2-decoration.webp";
 import flower2b from "@/assets/flower-decoration.webp";
 import flower8 from "@/assets/flower8-decoration.webp";
-import song from "@/assets/wedding-song.mp3.asset.json";
+import song from "@/assets/wedding-song.mp3";
 import envelopeBackground from "@/assets/envelope-background.webp";
 import envelopeCover from "@/assets/envelope-cover.webp";
 import stringDecoration from "@/assets/string-decoration.webp";
@@ -254,7 +253,7 @@ function Calendar() {
 function MusicButton({ audio, playing, toggle }: { audio: React.RefObject<HTMLAudioElement | null>; playing: boolean; toggle: () => void }) {
   return (
     <>
-      <audio ref={audio} src={song.url} loop preload="auto" />
+      <audio ref={audio} src={song} loop preload="auto" />
       <button
         onClick={toggle}
         aria-label={playing ? "Pause music" : "Play music"}
@@ -288,17 +287,37 @@ function Index() {
   const [gone, setGone] = useState(false);
   const audio = useRef<HTMLAudioElement>(null);
   const [playing, setPlaying] = useState(false);
+  const ceremonyRef = useRef<HTMLDivElement>(null);
   const toggle = () => {
     const a = audio.current; if (!a) return;
     if (a.paused) { void a.play().then(() => setPlaying(true)).catch(() => {}); } else { a.pause(); setPlaying(false); }
   };
 const openInvite = () => {
   setOpen(true);
-  setTimeout(() => setGone(true), 1000);
-};  return (
-    <div className="paper-tint min-h-screen overflow-x-hidden bg-cover bg-fixed bg-center" style={{ backgroundImage: `url(${paper.url})` }}>
-      {!gone && <Envelope onOpen={openInvite} closing={open} />}
-{/* <MusicButton audio={audio} playing={playing} toggle={toggle} /> */}
+
+  // Start wedding music
+  const a = audio.current;
+  if (a) {
+    void a.play()
+      .then(() => setPlaying(true))
+      .catch(() => {});
+  }
+
+  // Close envelope and scroll to Ceremony Info
+  setTimeout(() => {
+    setGone(true);
+
+    setTimeout(() => {
+      ceremonyRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 100);
+  }, 1000);
+};
+  Return (
+  <div>
+<MusicButton audio={audio} playing={playing} toggle={toggle} />
 
 <header className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 py-12">
 
@@ -383,9 +402,10 @@ const openInvite = () => {
 </header>
 
 
-<Section>
-  <Card>
-    <Flowers left={flower2} right={flower8} />
+<div ref={ceremonyRef}>
+  <Section>
+    <Card>
+      <Flowers left={flower2} right={flower8} />
 
     <h2 className="mt-2 mb-5 font-script text-5xl text-cocoa sm:mb-8 sm:text-7xl">
       Ceremony Info
@@ -449,7 +469,7 @@ const openInvite = () => {
     <Divider />
   </Card>
 </Section>
-
+</div>
       <Section>
         <div className="mx-auto max-w-2xl text-center">
           <Countdown />
@@ -540,7 +560,7 @@ const openInvite = () => {
       </div>
     </div>
 
-</footer>
-</div>
-);
+      </footer>
+    </div>
+  );
 }
