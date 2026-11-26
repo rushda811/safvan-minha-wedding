@@ -317,7 +317,11 @@ const openInvite = () => {
 };
 return (
   <div>
-<MusicButton audio={audio} playing={playing} toggle={toggle} />
+    {!gone && (
+      <Envelope onOpen={openInvite} closing={open} />
+    )}
+
+    <MusicButton audio={audio} playing={playing} toggle={toggle} />
 
 <header className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 py-12">
 
