@@ -315,7 +315,7 @@ const openInvite = () => {
     }, 100);
   }, 1000);
 };
-  Return (
+return (
   <div>
 <MusicButton audio={audio} playing={playing} toggle={toggle} />
 
